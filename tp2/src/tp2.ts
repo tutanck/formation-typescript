@@ -22,12 +22,11 @@ export const displayPeopleAndLength = (arr?: string[], literal?: boolean) => {
     returnPeopleAndLength(arr).forEach(([el, size]) =>
       console.log(`${el} contient ${size} caractères`)
     );
-  else if (literal === true) {
+  else if (literal === true)
     returnPeopleAndLength(arr)
       .filter(([, size]) => size <= 9)
       .forEach(([el, size]) => {
         const string_value: string = NumberToString[size];
         console.log(`${el} contient ${string_value} caractères`);
       });
-  }
 };
