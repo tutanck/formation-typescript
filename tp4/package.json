@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    
     "build": "tsc",
     "lint": "eslint ./src",
     "start": "ts-node src/app.ts",
     "start:dev": "nodemon -e ts -w ./src -x npm start",
+    "run": "ts-node src/tp4.ts",
     "test": "jest"
   },
   "keywords": [],
