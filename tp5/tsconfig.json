@@ -5,6 +5,8 @@
     "target": "ES2019",
     "strict": true,
     "sourceMap": false,
-    "lib": ["dom", "ESNext"]
+    "lib": ["dom", "ESNext"],
+    "typeRoots": ["./typings"],
+    "types": ["lodash"]
   }
 }
