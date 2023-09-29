@@ -1,8 +1,14 @@
-import { Album } from "./Album";
-import { Music } from "./Utils";
+export enum Music {
+  JAZZ,
+  ROCK,
+}
 
 export interface IMusician {
   addAlbum(album: Album): void;
+}
+
+export interface ElementToString {
+  toString(): string;
 }
 
 export class Musician implements IMusician {
@@ -47,4 +53,38 @@ export class Musician implements IMusician {
   addAlbum(album: Album): void {
     this.albums.push(album);
   }
+}
+
+export class JazzMusician extends Musician {
+  constructor(firstName: string, lastName: string, age: number) {
+    super(firstName, lastName, age);
+    this.style = Music.JAZZ;
+  }
+}
+
+export class RockStar extends Musician {
+  constructor(firstName: string, lastName: string, age: number) {
+    super(firstName, lastName, age);
+    this.style = Music.ROCK;
+  }
+}
+
+export class Album {
+  title: string;
+
+  constructor(title: string) {
+    this.title = title;
+  }
+
+  toString(): string {
+    return this.title;
+  }
+}
+
+export function display<T extends ElementToString>(elementToStrings: T[]) {
+  elementToStrings.forEach((elementToString) => {
+    const str = elementToString.toString();
+
+    console.log(str);
+  });
 }
